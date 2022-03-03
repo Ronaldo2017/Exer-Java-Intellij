@@ -1,20 +1,22 @@
 package model.entities;
 
+import model.exceptions.DomainException;
+
 public class Account {
 
 	private Integer number;
 	private String holder;
 	private Double balance;
-	private Double withDrawlLimi;
+	private Double withDrawlLimit;
 
 	public Account() {
 	}
 
-	public Account(Integer number, String holder, Double balance, Double withDrawlLimi) {
+	public Account(Integer number, String holder, Double balance, Double withDrawlLimit) {
 		this.number = number;
 		this.holder = holder;
 		this.balance = balance;
-		this.withDrawlLimi = withDrawlLimi;
+		this.withDrawlLimit = withDrawlLimit;
 	}
 
 	public Integer getNumber() {
@@ -41,19 +43,30 @@ public class Account {
 		this.balance = balance;
 	}
 
-	public Double getWithDrawlLimi() {
-		return withDrawlLimi;
+	public Double getWithDrawlLimit() {
+		return withDrawlLimit;
 	}
 
-	public void setWithDrawlLimi(Double withDrawlLimi) {
-		this.withDrawlLimi = withDrawlLimi;
+	public void setWithDrawlLimit(Double withDrawlLimit) {
+		this.withDrawlLimit = withDrawlLimit;
 	}
 
-	public void deposit(Double amount){
+	public void deposit(Double amount) {
 		balance += amount;
 	}
 
-	public void withDraw(Double amount){
-		balance -= amount;
+	public void withDraw(Double amount) throws DomainException {
+
+		if (amount > withDrawlLimit) {
+			throw new DomainException(" The amount exceeds withdraw limit");
+		}else {
+			balance -= amount;
+		}
+
+		if (balance < amount){
+			balance -= amount;
+			throw new DomainException(" Not enough balance");
+		}
 	}
+
 }

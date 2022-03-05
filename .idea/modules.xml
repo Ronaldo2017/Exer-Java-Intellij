@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Metodo_Classe-abstratos/Metodo_Classe-abstratos.iml" filepath="$PROJECT_DIR$/Metodo_Classe-abstratos/Metodo_Classe-abstratos.iml" />
-      <module fileurl="file://$PROJECT_DIR$/exerHeranca/exerHeranca.iml" filepath="$PROJECT_DIR$/exerHeranca/exerHeranca.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/exerIntellij-java.iml" filepath="$PROJECT_DIR$/.idea/exerIntellij-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/exerIntellij-java.iml" filepath="$PROJECT_DIR$/exerIntellij-java.iml" />
     </modules>
   </component>
 </project>
